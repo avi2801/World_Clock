@@ -6,8 +6,17 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+  int counter = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('The init function is working');
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('The build function is running');
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -16,7 +25,12 @@ class _ChooseLocationState extends State<ChooseLocation> {
             centerTitle:true,
             elevation: 0,
         ),
-
+        body:RaisedButton(onPressed: (){
+          setState(() {
+            counter+=1;
+          });
+        },
+        child:Text('The counter is $counter'),)
       ),
     );
   }
